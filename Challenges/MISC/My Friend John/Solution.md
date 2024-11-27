@@ -26,11 +26,24 @@ The challenge involved cracking a password-protected zip file, `flag.zip`. The p
    ```bash
    crunch 12 12 -o custom_wordlist.txt -t uccuitm^%%%%
 
-
 ## Passwords:
 1. 9112iloveyou
 2. uccuitm@1111
 
 ### Flag:
 The flag was: `UCC{CR4CK3D_W1TH_J0HN_W0ND3RFUL}`
+
+## Keypoints Breakdown:
+1. **Wordlists**:  
+   Wordlists are lists of potential passwords used for cracking encrypted files.
+2. **`zip2john`**:  
+   zip2john extracts the password hash from a zip file for cracking.
+3. **`John the Ripper`**:  
+   John the Ripper tests passwords from the wordlist against the hash to find the correct one.
+4. **`crunch`**:  
+   crunch generates custom wordlists based on specific patterns or rules.
+5. **Custom Wordlist Generation**:  
+   Use crunch to create a wordlist with the required password format (e.g., organization name + symbol + numbers).
+
+This should give the reader a better understanding of each tool used and why it was chosen for this challenge!
 
