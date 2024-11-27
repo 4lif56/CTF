@@ -9,6 +9,7 @@ This project showcases the process of:
 - Extracting ZIP file hashes for password cracking
 
 ## **Tools Used**
+- zip2john
 - John the Ripper
 - Crunch
 
