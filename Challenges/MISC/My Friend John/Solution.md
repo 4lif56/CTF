@@ -16,7 +16,7 @@ The challenge involved cracking a password-protected zip file, `flag.zip`. The p
    zip2john My_Friend_John.zip > hash.txt
 2. Crack the password using `John the Ripper` with a custom wordlist:
    ```bash
-   hash.txt --wordlist=/usr/share/wordlists/rockyou.txt
+   john --wordlist=/usr/share/wordlists/rockyou.txt hash.txt
 3. Once received the password, open `My_Friend_John.zip` with the recovered password.
 4. Repeat the first step with flag.txt (eg. flag_hash.txt):
    ```bash
