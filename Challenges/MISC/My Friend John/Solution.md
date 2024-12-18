@@ -17,18 +17,22 @@ The challenge involved cracking a password-protected zip file, `flag.zip`. The p
 2. Crack the password using `John the Ripper` with a custom wordlist:
    ```bash
    john --wordlist=/usr/share/wordlists/rockyou.txt hash.txt
-3. Once received the password, open `My_Friend_John.zip` with the recovered password.
-4. Repeat the first step with flag.txt (eg. flag_hash.txt):
+3. Once received the password, open `My_Friend_John.zip` with the recovered password. Repeat the first step with flag.txt (eg. flag_hash.txt):
    ```bash
-   zip2john flag.zip > flag_hash.txt
+   zip2john My_Friend_John/flag.zip > flag_hash.txt 
 4. Generate a Custom Wordlist Using crunch:
    Follow the pattern according to the hint (uccuitm<symbol><four digits>)
    ```bash
    crunch 12 12 -o custom_wordlist.txt -t uccuitm^%%%%
+5. Crack the password for flag.zip:
+   Use John the Ripper again to crack the password for flag.zip:
+   ```bash
+   john --wordlist=custom_wordlist.txt flag_hash.txt
+
 
 ## Passwords:
-1. 9112iloveyou
-2. uccuitm@1111
+1. My_Friend_John.zip password: 9112iloveyou
+2. flag.zip password: uccuitm@1111
 
 ### Flag:
 The flag was: `UCC{CR4CK3D_W1TH_J0HN_W0ND3RFUL}`
@@ -45,5 +49,4 @@ The flag was: `UCC{CR4CK3D_W1TH_J0HN_W0ND3RFUL}`
 5. **Custom Wordlist Generation**:  
    Use crunch to create a wordlist with the required password format (e.g., organization name + symbol + numbers).
 
-This should give the reader a better understanding of each tool used and why it was chosen for this challenge!
 
